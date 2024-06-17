@@ -1,0 +1,14 @@
+.topBar {
+  width: 100%;
+  max-width: 100rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.topBar > div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
