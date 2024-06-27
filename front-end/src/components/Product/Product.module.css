@@ -1,0 +1,34 @@
+.productCard {
+  position: relative;
+}
+
+.productCard img {
+  width: 250px;
+  height: 400px;
+}
+
+.productCard h3 {
+  margin: 0.5rem 0;
+  font-weight: 700;
+}
+
+.productCard p {
+  color: var(--color-price);
+  margin-bottom: 1rem;
+}
+
+.heart {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  background-image: url('../../assets/Icons/heart.svg');
+  background-repeat: none;
+}
+
+.heart:hover {
+  background-image: url('../../assets/Icons/heart-full.svg');
+}
