@@ -5,6 +5,8 @@ import './styles/theme.css'
 import './styles/global.css'
 import { MainPage } from './views/MainPage/MainPage.jsx'
 import { Favourites } from './views/Favourites/Favourites.jsx'
+import { Cart } from './views/Cart/Cart.jsx'
+
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: '/favourites',
     element: <Favourites />,
+  },
+  {
+    path: '/cart',
+    element: <Cart />,
   },
 ])
 

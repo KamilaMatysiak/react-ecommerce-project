@@ -1,8 +1,14 @@
-import styles from './FullWidthButton.module.css'
+import styles from "./FullWidthButton.module.css"
 
-export const FullWidthButton = ({ children, onClick }) => {
+export const FullWidthButton = ({ children, onClick, isBlack }) => {
   return (
-    <button className={styles.fullWidthButton} onClick={onClick}>
+    <button
+      className={
+        isBlack
+          ? `${styles.fullWidthButton} ${styles.black}`
+          : styles.fullWidthButton
+      }
+      onClick={onClick}>
       {children}
     </button>
   )

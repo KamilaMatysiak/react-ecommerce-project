@@ -9,3 +9,7 @@
   text-transform: uppercase;
   background: var(--color-theme-main);
 }
+
+.black {
+  background-color: var(--color-text-default);
+}
