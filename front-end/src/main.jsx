@@ -9,6 +9,7 @@ import { Cart } from "./views/Cart/Cart.jsx"
 import { ProductList } from "./views/ProductList/ProductList.jsx"
 import { ProductDetails } from "./views/ProductDetails/ProductDetails.jsx"
 import { Layout } from "./components/Layout/Layout.jsx"
+import { mainPageLoader } from "./api/mainPageLoader.js"
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,9 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: "/:gender?",
         element: <MainPage />,
+        loader: mainPageLoader,
       },
       {
         path: "/ulubione",

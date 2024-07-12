@@ -5,7 +5,7 @@ export const GENDERS = [
   },
   {
     name: "MĘŻCZYZNA",
-    path: "mężczyzna",
+    path: "mezczyzna",
   },
   {
     name: "DZIECKO",
