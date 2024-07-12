@@ -7,7 +7,7 @@ import { useLoaderData, useParams } from "react-router-dom"
 import { CATEGORIES } from "../../constants/categories"
 
 export const ProductList = () => {
-  const products = useLoaderData()
+  const { products, numberOfPages } = useLoaderData()
   const params = useParams()
   const foundCategory = CATEGORIES.find((c) => c.path === params.category)
   let foundSubcategory
@@ -27,7 +27,7 @@ export const ProductList = () => {
             foundSubcategory ? foundSubcategory.name : foundCategory.name
           }
         />
-        <Pagination numberOfPages={5} />
+        <Pagination numberOfPages={numberOfPages} />
       </div>
     </FlexContainer>
   )
