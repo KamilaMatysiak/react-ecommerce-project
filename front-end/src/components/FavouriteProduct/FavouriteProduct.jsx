@@ -2,9 +2,11 @@ import { useFetcher } from "react-router-dom"
 import BAG_ICON from "../../assets/Icons/bag.svg"
 import REMOVE_ICON from "../../assets/Icons/close.svg"
 import styles from "./FavouriteProduct.module.css"
+import { Price } from "../Price/Price"
 
 export const FavouriteProduct = ({ favourite: { id, product } }) => {
   const { Form } = useFetcher()
+  const price = <Price product={product} />
   return (
     <div className={styles.favouriteProduct}>
       <img src={product.photos[0]} />
@@ -13,12 +15,12 @@ export const FavouriteProduct = ({ favourite: { id, product } }) => {
           <h3>
             {product.brand} {product.productName}
           </h3>
-          <p>{product.pricePLN}zł</p>
+          <p>{price}</p>
         </div>
 
         <p className={styles.priceRow}>
           <span>Cena: </span>
-          {product.pricePLN}zł
+          {price}
         </p>
 
         <div className={styles.buttonRow}>

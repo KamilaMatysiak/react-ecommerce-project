@@ -8,8 +8,6 @@ import { useLoaderData } from "react-router-dom"
 export const ProductDetails = () => {
   const product = useLoaderData()
 
-  console.log(product)
-
   return (
     <FlexContainer>
       <ExpandableMenu />

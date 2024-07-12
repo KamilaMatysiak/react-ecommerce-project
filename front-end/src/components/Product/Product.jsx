@@ -1,5 +1,6 @@
 import { Link, useFetcher } from "react-router-dom"
 import styles from "./Product.module.css"
+import { Price } from "../Price/Price"
 
 const ENDPOINT_TO_PATH_MAPPING = {
   women: "kobieta",
@@ -9,6 +10,7 @@ const ENDPOINT_TO_PATH_MAPPING = {
 
 export const Product = ({ product }) => {
   const { Form } = useFetcher()
+  const price = <Price product={product} />
   return (
     <Link
       to={`/${ENDPOINT_TO_PATH_MAPPING[product.gender]}/${product.category}/${
@@ -17,7 +19,7 @@ export const Product = ({ product }) => {
       className={styles.productCard}>
       <img src={product.photos[0]} />
       <h3>{product.productName}</h3>
-      <p>{product.pricePLN}zł</p>
+      <p>{price}</p>
       <Form
         onClick={(e) => e.stopPropagation()}
         method="POST"
