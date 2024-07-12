@@ -1,4 +1,3 @@
-import { Layout } from "../../components/Layout/Layout"
 import { FlexContainer } from "../../components/FlexContainer/FlexContainer"
 import { Photos } from "../../components/Photos/Photos"
 import { Details } from "../../components/Details/Details"
@@ -27,17 +26,15 @@ export const ProductDetails = () => {
   }
 
   return (
-    <Layout>
-      <FlexContainer>
-        <ExpandableMenu />
-        <div style={{ width: "100%" }}>
-          <Breadcrumbs />
-          <FlexContainer>
-            <Photos product={product} />
-            <Details product={product} />
-          </FlexContainer>
-        </div>
-      </FlexContainer>
-    </Layout>
+    <FlexContainer>
+      <ExpandableMenu />
+      <div style={{ width: "100%" }}>
+        <Breadcrumbs />
+        <FlexContainer>
+          <Photos product={product} />
+          <Details product={product} />
+        </FlexContainer>
+      </div>
+    </FlexContainer>
   )
 }

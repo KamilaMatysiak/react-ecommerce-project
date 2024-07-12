@@ -1,5 +1,4 @@
 import { Hero } from "../../components/Hero/Hero"
-import { Layout } from "../../components/Layout/Layout"
 import COVER_IMG from "../../assets/img/cover.jfif"
 import { Products } from "../../components/Products/Products"
 
@@ -84,9 +83,9 @@ export const MainPage = () => {
   ]
 
   return (
-    <Layout>
+    <>
       <Hero heroImg={COVER_IMG} />
       <Products products={products} headerText="Sprawdź nasze bestsellery!" />
-    </Layout>
+    </>
   )
 }
