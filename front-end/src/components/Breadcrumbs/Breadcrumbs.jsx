@@ -1,12 +1,16 @@
 import styles from "./Breadcrumbs.module.css"
-import { NavLink } from "react-router-dom"
+import { NavLink, useParams } from "react-router-dom"
 import ARROW from "../../assets/Icons/arrow.svg"
 
 export const Breadcrumbs = () => {
+  const params = useParams()
   const breadcrumbs = [
-    { name: "Kobieta", path: "kobieta" },
-    { name: "Odzież", path: "odziez" },
-    { name: "Swetry", path: "swetry" },
+    { name: params.gender, path: params.gender },
+    { name: params.category, path: `${params.gender}/${params.category}` },
+    {
+      name: params.subcategory,
+      path: `${params.gender}/${params.category}/${params.subcategory}`,
+    },
   ]
   return (
     <div className={styles.breadcrumbs}>
