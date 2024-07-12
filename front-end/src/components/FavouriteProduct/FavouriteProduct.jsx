@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom'
-import BAG_ICON from '../../assets/Icons/bag.svg'
-import REMOVE_ICON from '../../assets/Icons/close.svg'
-import styles from './FavouriteProduct.module.css'
+import { useFetcher } from "react-router-dom"
+import BAG_ICON from "../../assets/Icons/bag.svg"
+import REMOVE_ICON from "../../assets/Icons/close.svg"
+import styles from "./FavouriteProduct.module.css"
 
-export const FavouriteProduct = ({ product }) => {
+export const FavouriteProduct = ({ favourite: { id, product } }) => {
+  const { Form } = useFetcher()
   return (
-    <Link className={styles.favouriteProduct}>
+    <div className={styles.favouriteProduct}>
       <img src={product.photos[0]} />
       <div className={styles.favouriteProductInfo}>
         <div className={styles.topRow}>
@@ -21,15 +22,17 @@ export const FavouriteProduct = ({ product }) => {
         </p>
 
         <div className={styles.buttonRow}>
-          <button>
-            <img src={REMOVE_ICON} /> Usuń
-          </button>
+          <Form method="DELETE" action={`/delete-from-favourites/${id}`}>
+            <button>
+              <img src={REMOVE_ICON} /> Usuń
+            </button>
+          </Form>
           <button>
             <img src={BAG_ICON} />
             Dodaj do koszyka
           </button>
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
