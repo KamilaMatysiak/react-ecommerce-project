@@ -18,7 +18,7 @@ export const Layout = () => {
   )
 
   const [cartItems, setCartItems] = useState(() => {
-    localStorage["cart_products"]
+    return localStorage["cart_products"]
       ? JSON.parse(localStorage["cart_products"])
       : []
   })
