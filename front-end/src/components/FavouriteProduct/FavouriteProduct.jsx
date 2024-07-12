@@ -3,9 +3,12 @@ import BAG_ICON from "../../assets/Icons/bag.svg"
 import REMOVE_ICON from "../../assets/Icons/close.svg"
 import styles from "./FavouriteProduct.module.css"
 import { Price } from "../Price/Price"
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
 
 export const FavouriteProduct = ({ favourite: { id, product } }) => {
   const { Form } = useFetcher()
+  const [, addProductToCart] = useContext(CartContext)
   const price = <Price product={product} />
   return (
     <div className={styles.favouriteProduct}>
@@ -29,7 +32,7 @@ export const FavouriteProduct = ({ favourite: { id, product } }) => {
               <img src={REMOVE_ICON} /> Usuń
             </button>
           </Form>
-          <button>
+          <button onClick={() => addProductToCart(product)}>
             <img src={BAG_ICON} />
             Dodaj do koszyka
           </button>

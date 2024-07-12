@@ -1,13 +1,14 @@
 import styles from "./Details.module.css"
-
-import { FullWidthButton } from "../FullWidthButton/FullWidthButton"
-
 import DELIVERY from "../../assets/Icons/delivery.svg"
 import RETURN from "../../assets/Icons/return.svg"
+import { FullWidthButton } from "../FullWidthButton/FullWidthButton"
 import { Accordion } from "../Accordion/Accordion"
 import { Price } from "../Price/Price"
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
 
 export const Details = ({ product }) => {
+  const [, addProductToCart] = useContext(CartContext)
   const price = <Price product={product} />
   const accordionContent = [
     { title: "Opis produktu", content: product.description },
@@ -18,7 +19,9 @@ export const Details = ({ product }) => {
       <h2>{product.brand}</h2>
       <p className={styles.productName}>{product.productName}</p>
       <p className={styles.price}>{price}</p>
-      <FullWidthButton isBlack={true}>Dodaj do koszyka</FullWidthButton>
+      <FullWidthButton isBlack={true} onClick={() => addProductToCart(product)}>
+        Dodaj do koszyka
+      </FullWidthButton>
       <ul className={styles.extraInfo}>
         <li>
           <img src={DELIVERY} /> Dostawa do 24h

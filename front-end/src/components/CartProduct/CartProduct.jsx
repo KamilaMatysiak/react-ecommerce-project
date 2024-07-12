@@ -2,8 +2,11 @@ import styles from "./CartProduct.module.css"
 import { Link } from "react-router-dom"
 import REMOVE_ICON from "../../assets/Icons/close.svg"
 import { Price } from "../Price/Price"
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
 
 export const CartProduct = ({ product }) => {
+  const [, , deleteProductFromCart] = useContext(CartContext)
   const price = <Price product={product} />
   return (
     <Link className={styles.cartProduct}>
@@ -22,7 +25,7 @@ export const CartProduct = ({ product }) => {
         </p>
 
         <div className={styles.buttonRow}>
-          <button>
+          <button onClick={() => deleteProductFromCart(product)}>
             <img src={REMOVE_ICON} /> Usuń
           </button>
         </div>
