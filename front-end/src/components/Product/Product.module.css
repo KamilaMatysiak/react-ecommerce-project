@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.productCard button {
+  border: none;
+}
+
 .productCard img {
   width: 250px;
   height: 400px;
@@ -25,10 +29,10 @@
   width: 1.5rem;
   height: 1.5rem;
 
-  background-image: url('../../assets/Icons/heart.svg');
+  background-image: url("../../assets/Icons/heart.svg");
   background-repeat: none;
 }
 
 .heart:hover {
-  background-image: url('../../assets/Icons/heart-full.svg');
+  background-image: url("../../assets/Icons/heart-full.svg");
 }

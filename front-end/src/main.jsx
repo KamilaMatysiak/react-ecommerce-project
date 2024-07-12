@@ -12,8 +12,13 @@ import { Layout } from "./components/Layout/Layout.jsx"
 import { mainPageLoader } from "./api/mainPageLoader.js"
 import { productListLoader } from "./api/productListLoader.js"
 import { productDetailsLoader } from "./api/productDetailsLoader.js"
+import { addProductToFavouritesAction } from "./api/addProductToFavouritesAction.js"
 
 const router = createBrowserRouter([
+  {
+    path: "/add-to-favourites/:productId",
+    action: addProductToFavouritesAction,
+  },
   {
     path: "",
     element: <Layout />,
